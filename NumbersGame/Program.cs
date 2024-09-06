@@ -63,7 +63,7 @@ class Program
 
             Console.WriteLine($"Välkommen jag tänker på ett nummer kan du gissa vilket? \nDu har {maxAttempts} försök:");
 
-            while (attempts < 5)
+            while (attempts < maxAttempts)
             {
                 int guess = int.Parse(Console.ReadLine());
                 attempts++;
