@@ -1,0 +1,14 @@
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/bin/Debug/net8.0/NumbersGame
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/bin/Debug/net8.0/NumbersGame.deps.json
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/bin/Debug/net8.0/NumbersGame.runtimeconfig.json
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/bin/Debug/net8.0/NumbersGame.dll
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/bin/Debug/net8.0/NumbersGame.pdb
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/obj/Debug/net8.0/NumbersGame.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/obj/Debug/net8.0/NumbersGame.AssemblyInfoInputs.cache
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/obj/Debug/net8.0/NumbersGame.AssemblyInfo.cs
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/obj/Debug/net8.0/NumbersGame.csproj.CoreCompileInputs.cache
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/obj/Debug/net8.0/NumbersGame.dll
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/obj/Debug/net8.0/refint/NumbersGame.dll
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/obj/Debug/net8.0/NumbersGame.pdb
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/obj/Debug/net8.0/NumbersGame.genruntimeconfig.cache
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/obj/Debug/net8.0/ref/NumbersGame.dll
