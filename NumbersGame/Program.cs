@@ -40,8 +40,9 @@ class Program
                     Console.WriteLine("Ogiltligt val måste vara en siffra, försök igen."); // invalid input message instead of a crash
                     break;
             }
-        }
-
+        } 
+        
+        // My methods for the game
         static void DisplayMenu() // method to display the menu
         {
             // welcome message and difficulty level selection
@@ -60,7 +61,7 @@ class Program
             Console.WriteLine("4. Avsluta");
             Console.ResetColor();
         }
-
+        
         static void PlayGame(int maxNumbers, int maxAttempts) // The game logic is created in my method PlayGame
         {
             Random random = new Random(); // create a new random object
@@ -95,7 +96,7 @@ class Program
             Console.WriteLine($"\nDu har använt alla dina gissningar. Numret jag tänkte på var {secretNumber}. Bättre lycka nästa gång!");
         }
     }
-
+    
     static bool guessCheck(int guess, int secretNumber) // method to check if the guess is correct
     {
         return guess == secretNumber; // return true if the guess is correct
