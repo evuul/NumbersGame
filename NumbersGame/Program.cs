@@ -4,15 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        bool isRunning = true;
+        bool isRunning = true; // create a bool to keep the game running
         
-        while (isRunning)
+        while (isRunning) // loop to keep the meny running
         {
+            // welcome message and difficulty level selection
             Console.WriteLine("\nVälkommen till mitt gissningsspel. Klarar du av att gissa rätt nummer?");
             Console.WriteLine("\nBörja med att välja svårighetsgrad:");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("1. Lätt 1-10 5 försök");
-            Console.ResetColor();
+            Console.ResetColor(); 
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("2. Medel 1-20 4 försök");
             Console.ResetColor();
@@ -23,56 +24,56 @@ class Program
             Console.WriteLine("4. Avsluta");
             Console.ResetColor();
 
-            string input = Console.ReadLine();
+            string input = Console.ReadLine(); // user input for difficulty level
 
-            int maxNumbers = 0;
-            int maxAttempts = 0;
+            int maxNumbers = 0; //  give my maxnumbers a value to avoid error
+            int maxAttempts = 0; // give my maxattempts a value to avoid error
             
             switch (input)
             {
                 case "1": // easy
-                    maxNumbers = 10;
-                    maxAttempts = 5;
-                    PlayGame(maxNumbers, maxAttempts);
+                    maxNumbers = 10; // set maxnumbers to 10 for easy mode
+                    maxAttempts = 5; // set maxattempts to 5 for easy mode
+                    PlayGame(maxNumbers, maxAttempts); // call the PlayGame method
                     break;
                 case "2": // medium
-                    maxNumbers = 20;
-                    maxAttempts = 4;
-                    PlayGame(maxNumbers, maxAttempts);
+                    maxNumbers = 20; // set maxnumbers to 20 for medium mode
+                    maxAttempts = 4; // set maxattempts to 4 for medium mode
+                    PlayGame(maxNumbers, maxAttempts); // call the PlayGame method
                     break;
                 case "3": // hard
-                    maxNumbers = 50;
-                    maxAttempts = 3;
-                    PlayGame(maxNumbers, maxAttempts);
+                    maxNumbers = 50; // set maxnumbers to 50 for hard mode
+                    maxAttempts = 3; // set maxattempts to 3 for hard mode
+                    PlayGame(maxNumbers, maxAttempts); // call the PlayGame method
                     break;
                 case "4": // quit
-                    Console.WriteLine("Tack för att du spelade!");
-                    isRunning = false;
+                    Console.WriteLine("Tack för att du spelade!"); // thank you message
+                    isRunning = false; // set isRunning to false to exit the loop
                     break;
                 default:
-                    Console.WriteLine("Ogiltligt val, försök igen.");
+                    Console.WriteLine("Ogiltligt val, försök igen."); // invalid input message instead of a crash
                     break;
             }
         }
 
-        static void PlayGame(int maxNumbers, int maxAttempts)
+        static void PlayGame(int maxNumbers, int maxAttempts) // The game logic is created in my method PlayGame
         {
-            Random random = new Random();
-            int secretNumber = random.Next(1, maxNumbers + 1);
+            Random random = new Random(); // create a new random object
+            int secretNumber = random.Next(1, maxNumbers + 1); // generate a random number between 1 and maxNumbers
             int attempts = 0;
 
             Console.WriteLine($"Välkommen jag tänker på ett nummer kan du gissa vilket? \nDu har {maxAttempts} försök:");
 
-            while (attempts < maxAttempts)
+            while (attempts < maxAttempts) // loop for the amount of maxAttempts
             {
-                int guess = int.Parse(Console.ReadLine());
-                attempts++;
-                if (guessCheck(guess, secretNumber))
+                int guess = int.Parse(Console.ReadLine()); // user input for guess
+                attempts++; // increment attempts after each guess
+                if (guessCheck(guess, secretNumber)) // call the guessCheck method to check if the guess is correct
                 {
                     Console.WriteLine($"Grattis du har gissat korrekt! Du lyckades på {attempts} försök.");
                     return;
                 }
-                else if (guess < secretNumber)
+                else if (guess < secretNumber) // if the guess is lower than the secret number
                 {
                     Console.WriteLine("Fel, Nummret jag tänker på är större. Försök igen.");
                 }
@@ -85,8 +86,8 @@ class Program
         }
     }
 
-    static bool guessCheck(int guess, int secretNumber) // metod för att kontrollera om gissningen är korrekt
+    static bool guessCheck(int guess, int secretNumber) // method to check if the guess is correct
     {
-        return guess == secretNumber;
+        return guess == secretNumber; // return true if the guess is correct
     }
 }
