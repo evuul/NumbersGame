@@ -12,3 +12,4 @@
 /Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/obj/Debug/net8.0/NumbersGame.pdb
 /Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/obj/Debug/net8.0/NumbersGame.genruntimeconfig.cache
 /Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/obj/Debug/net8.0/ref/NumbersGame.dll
+/Users/alexanderek/RiderProjects/NumbersGame/NumbersGame/obj/Debug/net8.0/NumbersGame.sourcelink.json
