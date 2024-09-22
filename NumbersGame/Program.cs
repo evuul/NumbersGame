@@ -1,5 +1,6 @@
-﻿namespace NumbersGame;
+﻿// SUT24 Alexander Ek
 
+namespace NumbersGame;
 class Program
 {
     static void Main(string[] args)
@@ -9,7 +10,7 @@ class Program
         while (isRunning) // loop to keep the meny running
         {
             DisplayMenu(); // call the DisplayMenu method
-
+            
             string input = Console.ReadLine(); // user input for difficulty level
 
             int maxNumbers = 0; // Declare the variable to store the max guess, will be assigned a value in the switch case depending on difficulty level
@@ -37,7 +38,7 @@ class Program
                     break;
                 case "4": // quit
                     Console.WriteLine("Tack för att du spelade!"); // thank you message
-                    isRunning = false; // set isRunning to false to exit the loop
+                    isRunning = false; // set isRunning false to exit the loop
                     break;
                 default:
                     Console.WriteLine("Ogiltligt val måste vara en siffra, försök igen."); // invalid input message instead of a crash
@@ -45,20 +46,21 @@ class Program
             }
         } 
         
-        // My methods for the game
+        // My methods
+        
         static void DisplayMenu() // method to display the menu
         {
             // welcome message and difficulty level selection
             Console.WriteLine("\nVälkommen till mitt gissningsspel. Klarar du av att gissa rätt nummer?");
             Console.WriteLine("\nBörja med att välja svårighetsgrad:");
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("1. Lätt 1-10 5 försök");
+            Console.WriteLine("1. Lätt ett tal mellan 1-10 5 försök");
             Console.ResetColor(); 
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("2. Medel 1-20 4 försök");
+            Console.WriteLine("2. Medel ett tal mellan  1-20 4 försök");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("3. Svår 1-50 3 försök");
+            Console.WriteLine("3. Svår ett tall mellan 1-50 3 försök");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("4. Avsluta");
@@ -99,6 +101,8 @@ class Program
                 }
             }
             Console.WriteLine($"\nDu har använt alla dina gissningar. Numret jag tänkte på var {secretNumber}. Bättre lycka nästa gång!");
+            Console.WriteLine("Tryck på valfri tangent för att fortsätta.");
+            Console.ReadKey(); // wait for user input before continuing
         }
     }
     
