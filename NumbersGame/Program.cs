@@ -14,23 +14,26 @@ class Program
 
             int maxNumbers = 0; // Declare the variable to store the max guess, will be assigned a value in the switch case depending on difficulty level
             int maxAttempts = 0; // Declare the variable to store the allowed number of attempts, will be assigned a value in the switch case depending on difficulty level
-            
+            string welcomeMessage = ""; // Declare the variable to store the welcome message, will be assigned a value in the switch case depending on difficulty level
             switch (input)
             {
                 case "1": // easy
+                    welcomeMessage = "Du har valt svårighetsgrad lätt. Klarar du av att gissa rätt nummer?"; // welcome message
                     maxNumbers = 10; // set maxnumbers to 10 for easy mode
                     maxAttempts = 5; // set maxattempts to 5 for easy mode
-                    PlayGame(maxNumbers, maxAttempts); // call the PlayGame method
+                    PlayGame(maxNumbers, maxAttempts, welcomeMessage); // call the PlayGame method
                     break;
                 case "2": // medium
+                    welcomeMessage = "Du har valt svårighetsgrad medel. Klarar du av att gissa rätt nummer?"; // welcome message
                     maxNumbers = 20; // set maxnumbers to 20 for medium mode
                     maxAttempts = 4; // set maxattempts to 4 for medium mode
-                    PlayGame(maxNumbers, maxAttempts); // call the PlayGame method
+                    PlayGame(maxNumbers, maxAttempts, welcomeMessage); // call the PlayGame method
                     break;
                 case "3": // hard
+                    welcomeMessage = "Du har valt svårighetsgrad svår. Klarar du av att gissa rätt nummer?"; // welcome message
                     maxNumbers = 50; // set maxnumbers to 50 for hard mode
                     maxAttempts = 3; // set maxattempts to 3 for hard mode
-                    PlayGame(maxNumbers, maxAttempts); // call the PlayGame method
+                    PlayGame(maxNumbers, maxAttempts, welcomeMessage); // call the PlayGame method
                     break;
                 case "4": // quit
                     Console.WriteLine("Tack för att du spelade!"); // thank you message
@@ -62,13 +65,13 @@ class Program
             Console.ResetColor();
         }
         
-        static void PlayGame(int maxNumbers, int maxAttempts) // The game logic is created in my method PlayGame
+        static void PlayGame(int maxNumbers, int maxAttempts, string welcomeMessage) // The game logic is created in my method PlayGame
         {
             Random random = new Random(); // create a new random object
             int secretNumber = random.Next(1, maxNumbers + 1); // generate a random number between 1 and maxNumbers
             int attempts = 0;
 
-            Console.WriteLine($"Välkommen jag tänker på ett nummer kan du gissa vilket? \nDu har {maxAttempts} försök:");
+            Console.WriteLine($"{welcomeMessage} \nDu har {maxAttempts} försök:");
 
             while (attempts < maxAttempts) // loop for the amount of maxAttempts
             {
@@ -82,6 +85,8 @@ class Program
                 if (guessCheck(guess, secretNumber)) // call the guessCheck method to check if the guess is correct
                 {
                     Console.WriteLine($"Grattis du har gissat korrekt! Du lyckades på {attempts} försök.");
+                    Console.WriteLine("Tryck på valfri tangent för att fortsätta.");
+                    Console.ReadKey(); // wait for user input before continuing
                     return;
                 }
                 else if (guess < secretNumber) // if the guess is lower than the secret number
